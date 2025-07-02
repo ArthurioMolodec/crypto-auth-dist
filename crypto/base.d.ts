@@ -1,4 +1,13 @@
 import { IWalletVerifier, WalletSignatureData } from './wallet-verify';
+export declare class PublicException extends Error {
+    constructor(message: string);
+}
+export declare class UnauthorizedException extends PublicException {
+    constructor(message: string);
+}
+export declare class BadRequestException extends PublicException {
+    constructor(message: string);
+}
 export interface AuthChallenge {
     message: string;
     nonce: string;

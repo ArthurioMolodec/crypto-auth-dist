@@ -1,0 +1,30 @@
+{
+  "name": "crypto-auth",
+  "version": "1.0.0",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "test": "mocha --require ts-node/register 'test/**/*.test.ts'"
+  },
+  "author": "ArthurioMolodec",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@polkadot/util": "^13.5.2",
+    "@polkadot/util-crypto": "^13.5.2", 
+    "@solana/web3.js": "^1.98.2",
+    "@ton/core": "^0.61.0",
+    "bitcoinjs-lib": "^6.1.7",
+    "bitcoinjs-message": "^2.2.0",
+    "chai": "^5.2.0",
+    "passport-strategy": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/chai": "^5.2.2",
+    "@types/mocha": "^10.0.10",
+    "@types/passport-strategy": "^0.2.38",
+    "mocha": "^11.7.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  }
+}
