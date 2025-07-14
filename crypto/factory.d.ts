@@ -17,5 +17,5 @@ export declare class CryptoAuthFactory {
         kusama: typeof KusamaWalletVerifier;
     });
     getBaseCryptoAuth(): BaseCryptoAuth;
-    walletVerifier(walletType: WalletType): BitcoinWalletVerifier | EVMWalletVerifier | SolanaWalletVerifier | PolkadotWalletVerifier | KusamaWalletVerifier | TonCryptoAuth;
+    walletVerifier(walletType: WalletType): BitcoinWalletVerifier | SolanaWalletVerifier | EVMWalletVerifier | TonCryptoAuth | PolkadotWalletVerifier | KusamaWalletVerifier;
 }

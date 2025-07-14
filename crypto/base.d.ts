@@ -17,12 +17,17 @@ export interface AuthChallenge {
 export declare class BaseCryptoAuth implements IWalletVerifier {
     verifySignature(data: WalletSignatureData): Promise<boolean>;
     validateAddress(address: string): boolean;
-    generateChallenge(address: string): Promise<AuthChallenge>;
+    generateChallenge(payload: {
+        address: string;
+        additional_info?: string;
+    }): Promise<AuthChallenge>;
     verifyResponse(payload: {
-        message: string;
+        message?: string;
         address: string;
         signature: string;
         publicKey?: string;
+        challenge: AuthChallenge;
+        additional_info?: string;
     }): Promise<{
         status: false;
         address?: undefined;
@@ -31,11 +36,12 @@ export declare class BaseCryptoAuth implements IWalletVerifier {
         address: string;
     }>;
     protected generateNonce(): string;
-    protected buildChallengeMessage(address: string, nonce: string, timestamp: number, expiresAt: number): string;
+    protected buildChallengeMessage(address: string, nonce: string, timestamp: number, expiresAt: number, additional_info?: string): string;
     protected parseChallengeMessage(message: string): {
         address: string;
         nonce: string;
         timestamp: number;
         expiresAt: number;
+        additional_info: string;
     };
 }
